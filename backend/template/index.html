@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investr</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      background-color: #e9ecef;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+      margin-top: 50px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #343a40;
+      font-weight: bold;
+    }
+
+    .form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    #recommendation {
+      transition: all 0.3s ease;
+    }
+
+    .loading {
+      display: none;
+    }
+
+    .loading.show {
+      display: block;
+      margin-top: 20px;
+    }
+
+    .alert {
+      display: none;
+    }
+
+    .alert.show {
+      display: block;
+    }
+
+    .spinner-border {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    .footer a {
+      color: #007bff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1><i class="fas fa-dollar-sign"></i> Investr</h1>
+    <p class="lead">Get personalized investment recommendations based on your financial profile.</p>
+    <form id="investment-form">
+      <div class="form-group">
+        <label for="income">Annual Income:</label>
+        <input type="number" class="form-control" id="income" placeholder="Enter your annual income" required>
+      </div>
+      <div class="form-group">
+        <label for="savings">Savings:</label>
+        <input type="number" class="form-control" id="savings" placeholder="Enter your total savings" required>
+      </div>
+      <div class="form-group">
+        <label for="risk-tolerance">Risk Tolerance:</label>
+        <select class="form-control" id="risk-tolerance">
+          <option value="0">High</option>
+          <option value="1">Medium</option>
+          <option value="2">Low</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="country">Country:</label>
+        <select class="form-control" id="country">
+          <option value="USD">United States (USD)</option>
+          <option value="EUR">Eurozone (EUR)</option>
+          <option value="GBP">United Kingdom (GBP)</option>
+          <option value="INR">India (INR)</option>
+          <option value="AUD">Australia (AUD)</option>
+          <option value="CAD">Canada (CAD)</option>
+          <option value="JPY">Japan (JPY)</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Get Recommendation</button>
+    </form>
+    <div id="loading" class="loading text-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <div id="recommendation" class="mt-4 alert alert-info" role="alert"></div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 Investr. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </div>
+
+  <script>
+    document.getElementById('investment-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const income = document.getElementById('income').value;
+      const savings = document.getElementById('savings').value;
+      const riskTolerance = document.getElementById('risk-tolerance').value;
+      const country = document.getElementById('country').value;
+
+      // Show loading spinner
+      const loading = document.getElementById('loading');
+      loading.classList.add('show');
+
+      fetch('http://localhost:5000/recommend', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ income, savings, risk_tolerance: riskTolerance, country }),
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+          }
+          return response.json();
+        })
+        .then(data => {
+          document.getElementById('recommendation').innerText = 'Recommended investments: ' + data.recommendations.join(', ') + ' (' + country + ')';
+          document.getElementById('recommendation').classList.add('show');
+        })
+        .catch((error) => {
+          document.getElementById('recommendation').innerText = 'Error: ' + error.message;
+          document.getElementById('recommendation').classList.add('alert-danger', 'show');
+        })
+        .finally(() => {
+          loading.classList.remove('show');
+        });
+    });
+  </script>
+</body>
+
+</html>
