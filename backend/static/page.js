@@ -9,6 +9,7 @@ document.getElementById('investment-form').addEventListener('submit', function (
   const loading = document.getElementById('loading');
   loading.classList.add('show');
 
+  // Update this URL if your Flask app is hosted elsewhere
   fetch('http://localhost:5000/recommend', {
     method: 'POST',
     headers: {
@@ -23,13 +24,12 @@ document.getElementById('investment-form').addEventListener('submit', function (
       return response.json();
     })
     .then(data => {
-      // Display the recommendations
-      document.getElementById('recommendation').innerText = 'Recommended investments: ' + data.recommendations.join(', ') + ' (' + data.currency + ')';
-      document.getElementById('recommendation').classList.add('show');
+      // Display the recommendations (adjust as necessary to match your new HTML structure)
+      window.location.href = `/recommendations?investment=${data.recommendations.join(', ')}&currency=${data.currency}`;
     })
     .catch((error) => {
-      document.getElementById('recommendation').innerText = 'Error: ' + error.message;
-      document.getElementById('recommendation').classList.add('alert-danger', 'show');
+      console.error('Error:', error);
+      alert('Error: ' + error.message);
     })
     .finally(() => {
       loading.classList.remove('show');
