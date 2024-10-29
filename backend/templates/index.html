@@ -14,7 +14,7 @@
   <div class="container text-center">
     <h1><i class="fas fa-chart-line"></i> Investr</h1>
     <p class="lead">Get personalized investment recommendations tailored to your profile.</p>
-    <div id="loading" style="display:none;">Loading...</div> <!-- Loading Indicator -->
+
     <form id="investment-form" action="/recommend" method="POST">
       <div class="form-group">
         <label for="income">Annual Income:</label>
@@ -28,7 +28,7 @@
       </div>
       <div class="form-group">
         <label for="risk-tolerance">Risk Tolerance:</label>
-        <select class="form-control" id="risk-tolerance" name="risk_tolerance">
+        <select class="form-control" id="risk-tolerance" name="risk_tolerance" required>
           <option value="0">High</option>
           <option value="1">Medium</option>
           <option value="2">Low</option>
@@ -36,7 +36,7 @@
       </div>
       <div class="form-group">
         <label for="country">Country:</label>
-        <select class="form-control" id="country" name="country">
+        <select class="form-control" id="country" name="country" required>
           <option value="USD">United States (USD)</option>
           <option value="EUR">Eurozone (EUR)</option>
           <option value="GBP">United Kingdom (GBP)</option>
@@ -48,10 +48,96 @@
       </div>
       <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Get Recommendation</button>
     </form>
+
+    <!-- Recommendations Display Area -->
+    <div id="recommendations" class="mt-4">
+      {% if recommendations %}
+      <h2>Your Recommendations:</h2>
+      <ul class="list-group">
+        {% for recommendation in recommendations %}
+        <li class="list-group-item">{{ recommendation }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
   </div>
+
+  <!-- About Section -->
+  <div class="container mt-5">
+    <h2>About Us</h2>
+    <p>Investr is designed to help individuals make informed investment decisions based on their unique financial
+      profiles. We offer personalized recommendations to help you achieve your financial goals.</p>
+  </div>
+
+  <!-- Features Section -->
+  <div class="container mt-5">
+    <h2>Features</h2>
+    <ul class="list-group">
+      <li class="list-group-item">Personalized investment recommendations</li>
+      <li class="list-group-item">User-friendly interface</li>
+      <li class="list-group-item">Real-time updates on market trends</li>
+      <li class="list-group-item">Secure and private data handling</li>
+    </ul>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="container mt-5">
+    <h2>Testimonials</h2>
+    <blockquote class="blockquote">
+      <p class="mb-0">"Investr helped me find the perfect investment options!"</p>
+      <footer class="blockquote-footer">John Doe, <cite title="Source Title">Satisfied Customer</cite></footer>
+    </blockquote>
+    <blockquote class="blockquote">
+      <p class="mb-0">"A fantastic tool for anyone looking to invest wisely."</p>
+      <footer class="blockquote-footer">Jane Smith, <cite title="Source Title">Happy User</cite></footer>
+    </blockquote>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="container mt-5">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or feedback, feel free to reach out to us!</p>
+    <p>Email: support@investr.com</p>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="container mt-5">
+    <h2>Frequently Asked Questions</h2>
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#faq1" aria-expanded="true">
+            What is Investr?
+          </button>
+        </h5>
+      </div>
+      <div id="faq1" class="collapse show" data-parent="#faqAccordion">
+        <div class="card-body">
+          Investr is a platform that provides personalized investment recommendations based on your financial profile.
+        </div>
+      </div>
+    </div>
+    <div class="card mt-3">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faq2" aria-expanded="false">
+            How does Investr work?
+          </button>
+        </h5>
+      </div>
+      <div id="faq2" class="collapse" data-parent="#faqAccordion">
+        <div class="card-body">
+          Users input their financial data, and our model analyzes this information to provide investment options
+          tailored to their needs.
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="footer">
     <p>&copy; 2024 Investr. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
   </div>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

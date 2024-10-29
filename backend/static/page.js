@@ -1,5 +1,5 @@
 document.getElementById('investment-form').addEventListener('submit', function (event) {
-  event.preventDefault();
+  event.preventDefault(); // Prevent default form submission
 
   const income = document.getElementById('income').value;
   const savings = document.getElementById('savings').value;
@@ -7,31 +7,49 @@ document.getElementById('investment-form').addEventListener('submit', function (
   const country = document.getElementById('country').value;
 
   const loading = document.getElementById('loading');
-  loading.classList.add('show');
+  const recommendationsDiv = document.getElementById('recommendations');
 
-  // Update this URL if your Flask app is hosted elsewhere
-  fetch('http://localhost:5000/recommend', {
+  loading.style.display = 'block'; // Show loading indicator
+  recommendationsDiv.innerHTML = ''; // Clear previous recommendations
+
+  // Make a POST request to the Flask backend
+  fetch('/recommend', { // Assuming the server is running on the same origin
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json', // Specify the content type
     },
-    body: JSON.stringify({ income, savings, risk_tolerance: riskTolerance, country }),
+    body: JSON.stringify({
+      income,
+      savings,
+      risk_tolerance: riskTolerance,
+      country
+    }), // Send data as JSON
   })
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok ' + response.statusText);
       }
-      return response.json();
+      return response.json(); // Parse the response JSON
     })
     .then(data => {
-      // Display the recommendations (adjust as necessary to match your new HTML structure)
-      window.location.href = `/recommendations?investment=${data.recommendations.join(', ')}&currency=${data.currency}`;
+      // Display the recommendations smoothly
+      const recommendationsText = `Recommended investments: ${data.recommendations.join(', ')} (${data.currency})`;
+      const resultItem = document.createElement('div');
+      resultItem.className = 'result-item';
+      resultItem.textContent = recommendationsText;
+
+      // Append result item with a fade-in effect
+      recommendationsDiv.appendChild(resultItem);
+      resultItem.classList.add('fade-in');
     })
     .catch((error) => {
       console.error('Error:', error);
-      alert('Error: ' + error.message);
+      const errorMessage = document.createElement('div');
+      errorMessage.className = 'alert alert-danger mt-4'; // Bootstrap alert for errors
+      errorMessage.textContent = 'Error: ' + error.message;
+      recommendationsDiv.appendChild(errorMessage);
     })
     .finally(() => {
-      loading.classList.remove('show');
+      loading.style.display = 'none'; // Hide loading indicator
     });
 });

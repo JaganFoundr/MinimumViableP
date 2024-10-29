@@ -1,13 +1,15 @@
 from flask import Flask, request, render_template
-from flask_cors import CORS  # Import CORS
-import joblib
-import pandas as pd
+from flask_cors import CORS
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-# Load the trained model
-model = joblib.load('model/investment_model.pkl')
+# Load pre-trained model and tokenizer from Hugging Face
+model_name = "EleutherAI/gpt-neo-1.3B"  # Change to your preferred model
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
 
 # Define a mapping from country codes to currencies (can be expanded)
 currency_map = {
@@ -32,24 +34,35 @@ def recommend():
     risk_tolerance = request.form['risk_tolerance']
     country = request.form['country']
 
-    # Prepare input for the model
-    input_data = pd.DataFrame([[float(income), float(savings), int(risk_tolerance)]],
-                               columns=['Income', 'Savings', 'Risk_Tolerance'])
+    # Create a prompt for the LLM
+    prompt = (
+        f"Based on the following financial information:\n"
+        f"Annual Income: {income}\n"
+        f"Savings: {savings}\n"
+        f"Risk Tolerance: {risk_tolerance}\n"
+        f"Country: {currency_map[country]}\n\n"
+        f"Provide personalized investment recommendations."
+    )
 
-    # Predict the investment recommendation
-    prediction = model.predict(input_data)
-    # Map integer predictions back to investment choices
-    investment_choices = ['Tech Stocks', 'Index Funds', 'Government Bonds', 'Real Estate', 'Mutual Funds']
-    
-    recommended_investment = investment_choices[prediction[0]]
+    # Tokenize input and generate output
+    input_ids = tokenizer.encode(prompt, return_tensors='pt')
+
+    try:
+        # Generate recommendations
+        output = model.generate(input_ids, max_length=150, num_return_sequences=1)
+        recommendations = tokenizer.decode(output[0], skip_special_tokens=True).strip().split('\n')
+
+    except Exception as e:
+        print(f"Error generating recommendations: {e}")
+        recommendations = ["Unable to generate recommendations at this time."]
 
     # Determine the currency based on the selected country
     currency = currency_map.get(country, 'Unknown Currency')
 
-    print(f"Recommended Investment: {recommended_investment}, Currency: {currency}")
+    print(f"Recommendations: {recommendations}, Currency: {currency}")
     
     # Render the recommendation page with the results
-    return render_template('recommendation.html', recommendations=[recommended_investment], currency=currency)
+    return render_template('recommendation.html', recommendations=recommendations, currency=currency)
 
 if __name__ == '__main__':
     app.run(debug=True)
