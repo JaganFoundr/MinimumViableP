@@ -54,40 +54,6 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.getElementById('investment-form').addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const formData = new FormData(this);
-
-      const loading = document.getElementById('loading');
-      loading.classList.add('show');
-
-      fetch('http://localhost:5000/recommend', {
-        method: 'POST',
-        body: formData,
-      })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-          }
-          return response.text();  // Change to text because we are returning HTML
-        })
-        .then(html => {
-          // Inject the returned HTML into the document
-          document.open();
-          document.write(html);
-          document.close();
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-          alert('Error: ' + error.message);
-        })
-        .finally(() => {
-          loading.classList.remove('show');
-        });
-    });
-  </script>
 </body>
 
 </html>
