@@ -45,6 +45,8 @@ def recommend():
 
     # Determine the currency based on the selected country
     currency = currency_map.get(country, 'Unknown Currency')
+
+    print(f"Recommended Investment: {recommended_investment}, Currency: {currency}")
     
     # Render the recommendation page with the results
     return render_template('recommendation.html', recommendations=[recommended_investment], currency=currency)
