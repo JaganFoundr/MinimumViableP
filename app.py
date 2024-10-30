@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Load pre-trained model and tokenizer from Hugging Face
-model_name = "EleutherAI/gpt-neo-1.3B"  # Change to your preferred model
+model_name = "meta-llama/LLaMA-3.2-1B"  # Change to your preferred model
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 

@@ -12,8 +12,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Download the model (this will happen during build, not at runtime)
 RUN python -c "from transformers import AutoModelForCausalLM, AutoTokenizer; \
-AutoTokenizer.from_pretrained('EleutherAI/gpt-neo-1.3B'); \
-AutoModelForCausalLM.from_pretrained('EleutherAI/gpt-neo-1.3B')"
+AutoTokenizer.from_pretrained('meta-llama/LLaMA-3.2-1B'); \
+AutoModelForCausalLM.from_pretrained('meta-llama/LLaMA-3.2-1B')"
 
 # Copy the entire project directory into the container
 COPY . .
