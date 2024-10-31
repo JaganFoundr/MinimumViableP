@@ -1,4 +1,5 @@
 /* Body Styles */
+
 html {
   scroll-behavior: smooth;
 }
@@ -117,7 +118,7 @@ button.btn {
   border: none;
   font-size: 1.2rem;
   padding: 12px;
-  transition: all 0.3s ease; /* Added transition for consistency */
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button.btn:hover {
@@ -140,7 +141,7 @@ button.btn:hover {
 }
 
 .loading.show {
-  display: inline-block; /* Show loading spinner */
+  display: inline-block;
 }
 
 .spinner-border {
@@ -189,3 +190,41 @@ button.btn:hover {
     font-size: 1rem;
   }
 }
+
+.loading {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align text and spinner */
+}
+
+.loading-text {
+  font-size: 1.5rem; /* Increase text size */
+  color: #007bff; /* Primary color */
+  margin-bottom: 15px; /* Space between text and spinner */
+}
+
+.spinner-icon {
+  font-size: 3rem; /* Size of the spinner */
+  color: #007bff; /* Spinner color matching the text */
+  animation: spin 1s linear infinite; /* Smooth spinning effect */
+}
+
+/* Animation for the spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Optional: Center the loading spinner in the viewport */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+

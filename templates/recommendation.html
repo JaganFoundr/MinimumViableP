@@ -8,6 +8,22 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="static/styles.css">
+  <style>
+    .loading {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 1.5em;
+    }
+
+    .loading i {
+      font-size: 2em;
+      margin-left: 10px;
+    }
+
+    #recommendations {
+      display: none; /* Hide recommendations by default */
+    }
+  </style>
 </head>
 
 <body>
@@ -17,30 +33,38 @@
       <p class="lead">Here’s a customized investment strategy based on your profile:</p>
     </div>
 
+    <!-- Loading Indicator -->
+    <div id="loading" class="loading">
+      <p>Loading your recommendations... Please wait.</p>
+      <i class="fas fa-spinner fa-spin"></i>
+    </div>
+
     <!-- Recommendation Sections -->
-    <div class="recommendation-section mt-4">
-      <h3>1. Asset Allocation</h3>
-      <p>{{ recommendations['Asset Allocation'] }}</p>
-    </div>
+    <div id="recommendations">
+      <div class="recommendation-section mt-4">
+        <h3>1. Asset Allocation</h3>
+        <p>{{ recommendations['Asset Allocation'] }}</p>
+      </div>
 
-    <div class="recommendation-section mt-4">
-      <h3>2. Risk Management Strategy</h3>
-      <p>{{ recommendations['Risk Management'] }}</p>
-    </div>
+      <div class="recommendation-section mt-4">
+        <h3>2. Risk Management Strategy</h3>
+        <p>{{ recommendations['Risk Management'] }}</p>
+      </div>
 
-    <div class="recommendation-section mt-4">
-      <h3>3. Short-Term and Long-Term Goals</h3>
-      <p>{{ recommendations['Short-Term and Long-Term Goals'] }}</p>
-    </div>
+      <div class="recommendation-section mt-4">
+        <h3>3. Short-Term and Long-Term Goals</h3>
+        <p>{{ recommendations['Short-Term and Long-Term Goals'] }}</p>
+      </div>
 
-    <!-- Currency Information -->
-    <div class="mt-4 alert alert-info" role="alert">
-      All recommendations are provided in the context of your local currency: {{ currency }}.
-    </div>
+      <!-- Currency Information -->
+      <div class="mt-4 alert alert-info" role="alert">
+        All recommendations are provided in the context of your local currency: {{ currency }}.
+      </div>
 
-    <!-- Navigation Buttons -->
-    <div class="text-center mt-5">
-      <a href="/" class="btn btn-primary">Go Back</a>
+      <!-- Navigation Buttons -->
+      <div class="text-center mt-5">
+        <a href="/" class="btn btn-primary">Go Back</a>
+      </div>
     </div>
   </div>
 
@@ -48,6 +72,26 @@
   <div class="footer text-center mt-5">
     <p>&copy; 2024 Investr. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
   </div>
+
+  <script>
+    // Use window.onload to display recommendations and hide loading indicator
+    window.onload = function() {
+      // Hide loading indicator
+      document.getElementById('loading').style.display = 'none';
+      // Show recommendations
+      document.getElementById('recommendations').style.display = 'block';
+    };
+
+    // Simulate loading for demonstration purposes (remove in production)
+    document.addEventListener('DOMContentLoaded', function() {
+      // Simulate server processing time
+      setTimeout(function() {
+        // Assume recommendations are loaded; show recommendations section
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('recommendations').style.display = 'block';
+      }, 2000); // 2-second delay for demonstration
+    });
+  </script>
 </body>
 
 </html>

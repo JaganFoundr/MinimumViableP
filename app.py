@@ -34,10 +34,14 @@ def index():
 @app.route('/recommend', methods=['POST'])
 def recommend():
     # Get data from the form
-    income = request.form.get('income', 'N/A')
-    savings = request.form.get('savings', 'N/A')
-    risk_tolerance = request.form.get('risk_tolerance', 'N/A')
+    income = request.form.get('income')
+    savings = request.form.get('savings')
+    risk_tolerance = request.form.get('risk_tolerance')
     country = request.form.get('country', 'USD')
+
+    # Validate input
+    if not income.isdigit() or not savings.isdigit() or int(income) <= 0 or int(savings) < 0:
+        return render_template('index.html', error="Invalid income or savings input.")
 
     # Create a structured prompt for the LLM
     prompt = (
