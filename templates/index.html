@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="static/styles.css">
-  
 </head>
 
 <body>
@@ -34,45 +33,24 @@
 
     <form id="investment-form" action="/recommend" method="POST" class="p-4 shadow-lg rounded bg-light">
       <div class="form-group">
-        <label for="income">Annual Income:</label>
-        <input type="number" class="form-control" id="income" name="income" placeholder="Enter your annual income" required>
-      </div>
-      <div class="form-group">
-        <label for="savings">Savings:</label>
-        <input type="number" class="form-control" id="savings" name="savings" placeholder="Enter your total savings" required>
-      </div>
-      <div class="form-group">
-        <label for="risk-tolerance">Risk Tolerance:</label>
-        <select class="form-control" id="risk-tolerance" name="risk_tolerance" required>
-          <option value="0">High</option>
-          <option value="1">Medium</option>
-          <option value="2">Low</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="country">Country:</label>
-        <select class="form-control" id="country" name="country" required>
-          <option value="USD">United States (USD)</option>
-          <option value="EUR">Eurozone (EUR)</option>
-          <option value="GBP">United Kingdom (GBP)</option>
-          <option value="INR">India (INR)</option>
-          <option value="AUD">Australia (AUD)</option>
-          <option value="CAD">Canada (CAD)</option>
-          <option value="JPY">Japan (JPY)</option>
-        </select>
+        <label for="profile">Enter Your Financial Profile:</label>
+        <textarea id="profile" name="profile" rows="6" class="form-control"
+          placeholder="Example: My annual income is $50,000, and I have saved a total of $20,000. My risk tolerance is moderate (5 out of 10), and I am located in the United States."
+             style="padding: 5px; margin: 0; text-indent: 0;">
+        </textarea>
+
+
+
       </div>
       <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Get Recommendation</button>
     </form>
   </div>
 
   <!-- Loading Spinner -->
-  <div id="loading" class="loading" style="display: none;">
-    <div class="spinner-container">
-      <p class="loading-text">Loading your recommendations... Please wait.</p>
-      <i class="fas fa-spinner fa-spin spinner-icon"></i>
-    </div>
+  <div id="loading" class="loading" style="display: none; text-align: center; margin-top: 20px;">
+    <p>Loading your recommendations... Please wait.</p>
+    <i class="fas fa-spinner fa-spin" style="font-size: 3rem;"></i>
   </div>
-
 
   <!-- About Section -->
   <div id="about" class="container mt-5">
@@ -167,7 +145,6 @@
       
       // Simulate a delay for processing (for demo purposes)
       setTimeout(function () {
-        // After delay, you can submit the form programmatically
         document.getElementById('investment-form').submit();
       }, 1000);
     };

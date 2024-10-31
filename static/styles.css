@@ -189,3 +189,10 @@ button.btn:hover {
     font-size: 1rem;
   }
 }
+textarea.form-control {
+  padding: 5px;         /* Minimal padding for cursor placement */
+  margin: 0;            /* No margin to avoid offset */
+  text-indent: 0;       /* Ensure no text indentation */
+  line-height: 1.4;     /* Set line height for readability */
+  box-sizing: border-box; /* Prevent box model issues */
+}
