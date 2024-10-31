@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="static/styles.css">
+  <style>
+    .loading {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 
 <body>
@@ -32,22 +39,19 @@
     <p class="lead">Get personalized investment recommendations tailored to your profile.</p>
 
     <form id="investment-form" action="/recommend" method="POST" class="p-4 shadow-lg rounded bg-light">
-      <div class="form-group">
-        <label for="profile">Enter Your Financial Profile:</label>
-        <textarea id="profile" name="profile" rows="6" class="form-control"
-          placeholder="Example: My annual income is $50,000, and I have saved a total of $20,000. My risk tolerance is moderate (5 out of 10), and I am located in the United States."
-             style="padding: 5px; margin: 0; text-indent: 0;">
-        </textarea>
-
-
-
-      </div>
-      <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Get Recommendation</button>
+        <div class="form-group">
+            <label for="profile">Enter Your Financial Profile:</label>
+            <textarea id="profile" name="profile" rows="6" class="form-control" required
+                placeholder="Example: I earn $50,000 annually, have $20,000 saved, and my risk tolerance is moderate (5 out of 10).">
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Get Recommendation</button>
     </form>
   </div>
 
+
   <!-- Loading Spinner -->
-  <div id="loading" class="loading" style="display: none; text-align: center; margin-top: 20px;">
+  <div id="loading" class="loading">
     <p>Loading your recommendations... Please wait.</p>
     <i class="fas fa-spinner fa-spin" style="font-size: 3rem;"></i>
   </div>
@@ -92,31 +96,33 @@
   <!-- FAQ Section -->
   <div id="faq" class="container mt-5">
     <h2>Frequently Asked Questions</h2>
-    <div class="card">
-      <div class="card-header">
-        <h5 class="mb-0">
-          <button class="btn btn-link" data-toggle="collapse" data-target="#faq1" aria-expanded="true">
-            What is Investr?
-          </button>
-        </h5>
-      </div>
-      <div id="faq1" class="collapse show" data-parent="#faqAccordion">
-        <div class="card-body">
-          Investr is a platform that provides personalized investment recommendations based on your financial profile.
+    <div class="accordion" id="faqAccordion">
+      <div class="card">
+        <div class="card-header" id="faqHeading1">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1">
+              What is Investr?
+            </button>
+          </h5>
+        </div>
+        <div id="faq1" class="collapse show" aria-labelledby="faqHeading1" data-parent="#faqAccordion">
+          <div class="card-body">
+            Investr is a platform that provides personalized investment recommendations based on your financial profile.
+          </div>
         </div>
       </div>
-    </div>
-    <div class="card mt-3">
-      <div class="card-header">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faq2" aria-expanded="false">
-            How does Investr work?
-          </button>
-        </h5>
-      </div>
-      <div id="faq2" class="collapse" data-parent="#faqAccordion">
-        <div class="card-body">
-          Users input their financial data, and our model analyzes this information to provide investment options tailored to their needs.
+      <div class="card mt-3">
+        <div class="card-header" id="faqHeading2">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              How does Investr work?
+            </button>
+          </h5>
+        </div>
+        <div id="faq2" class="collapse" aria-labelledby="faqHeading2" data-parent="#faqAccordion">
+          <div class="card-body">
+            Users input their financial data, and our model analyzes this information to provide investment options tailored to their needs.
+          </div>
         </div>
       </div>
     </div>
@@ -143,10 +149,10 @@
       // Show the loading spinner
       document.getElementById('loading').style.display = 'block';
       
-      // Simulate a delay for processing (for demo purposes)
+      // Submit the form after a short delay to simulate loading
       setTimeout(function () {
-        document.getElementById('investment-form').submit();
-      }, 1000);
+        this.submit(); // Use the `this` keyword to reference the form
+      }.bind(this), 1000); // 1-second delay for demo purposes
     };
   </script>
 

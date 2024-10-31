@@ -25,6 +25,10 @@ def recommend():
     # Get user profile input from the textarea
     profile = request.form.get('profile')
 
+    # Validate input to ensure it is not empty
+    if not profile or len(profile.strip()) == 0:
+        return render_template('index.html', error="Profile input cannot be empty.")
+
     # Use the user input directly in the prompt
     prompt = profile  # Use exactly what the user typed in the textarea
 
@@ -35,15 +39,14 @@ def recommend():
         # Generate recommendations
         output = model.generate(
             **inputs,
-            max_length=300,  # Adjust max length for comprehensive output
+            max_length=150,  # Adjust max length for comprehensive output
             num_return_sequences=1,
             do_sample=True,
             temperature=0.7
         )
         raw_recommendation = tokenizer.decode(output[0], skip_special_tokens=True).strip()
 
-        # You may want to consider splitting or structuring the recommendation here, if necessary
-        # For now, we'll keep it as a single output
+        # Structure the recommendation for better clarity
         structured_recommendation = {
             "Recommendations": raw_recommendation
         }
