@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="static/styles.css">
+  
 </head>
 
 <body>
@@ -65,10 +66,13 @@
   </div>
 
   <!-- Loading Spinner -->
-  <div id="loading" class="loading" style="display: none; text-align: center; margin-top: 20px;">
-    <p>Loading your recommendations... Please wait.</p>
-    <i class="fas fa-spinner fa-spin" style="font-size: 3rem;"></i>
+  <div id="loading" class="loading" style="display: none;">
+    <div class="spinner-container">
+      <p class="loading-text">Loading your recommendations... Please wait.</p>
+      <i class="fas fa-spinner fa-spin spinner-icon"></i>
+    </div>
   </div>
+
 
   <!-- About Section -->
   <div id="about" class="container mt-5">
