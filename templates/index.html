@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
-    /* Body and Overall Styles */
+        /* Body and Overall Styles */
     html {
       scroll-behavior: smooth;
     }
@@ -62,28 +62,24 @@
     .hero-section {
       text-align: center;
       padding: 100px 0;
+      background: linear-gradient(to right, #007bff, #00d4ff);
+      color: white; /* Changed text color for better contrast */
     }
 
     .hero-section h1 {
-      color: #007bff;
-      font-size: 2.5rem;
-      text-shadow: 1px 1px 4px rgba(0, 123, 255, 0.3);
+      font-size: 3rem; /* Increased font size */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .hero-section .lead {
-      color: #6c757d;
-      font-size: 1.1rem;
-      margin-bottom: 20px;
+      font-size: 1.25rem; /* Increased font size */
+      margin-bottom: 30px; /* Added space below the lead text */
     }
 
     /* Form Styles */
     #investment-form {
       max-width: 600px;
-      margin: auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      margin: auto; /* Center the form */
     }
 
     .form-group {
@@ -93,14 +89,15 @@
     .form-control {
       font-size: 1.1rem;
       padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ced4da;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      border: none; /* No borders for a cleaner look */
+      border-radius: 0; /* No rounded corners */
+      background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .form-control:focus {
-      border-color: #007bff;
-      box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+      background-color: #ffffff; /* Solid background on focus */
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.4); /* Shadow effect for focus */
     }
 
     button.btn {
@@ -108,13 +105,13 @@
       font-size: 1.2rem;
       padding: 12px;
       border: none;
-      border-radius: 8px;
-      transition: background 0.3s ease, transform 0.3s ease;
+      border-radius: 30px; /* Rounded button */
+      transition: background 0.3s ease, transform 0.3s ease; /* Animation */
     }
 
     button.btn:hover {
       background: linear-gradient(135deg, #0056b3, #0084cc);
-      transform: scale(1.05);
+      transform: scale(1.05); /* Button scaling effect on hover */
     }
 
     /* Section Styles */
@@ -123,11 +120,25 @@
       text-align: center;
     }
 
-    #about { background-color: #f0f8ff; }
-    #features { background-color: #f5f5f5; }
-    #testimonials { background-color: #e9f7ef; }
-    #contact { background-color: #fff5f8; }
-    #faq { background-color: #f9f9f9; }
+    #about {
+      background-color: #f0f8ff;
+    }
+
+    #features {
+      background-color: #f5f5f5;
+    }
+
+    #testimonials {
+      background-color: #e9f7ef;
+    }
+
+    #contact {
+      background-color: #fff5f8;
+    }
+
+    #faq {
+      background-color: #f9f9f9;
+    }
 
     h2 {
       color: #007bff;
@@ -154,10 +165,10 @@
 
     /* Responsive Design */
     @media (max-width: 576px) {
-      h1 {
-        font-size: 2rem;
+      .hero-section h1 {
+        font-size: 2rem; /* Adjust heading size for smaller screens */
       }
-      
+
       .nav-link {
         margin-right: 15px;
       }
@@ -176,7 +187,6 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
-  
       justify-content: center;
       align-items: center;
       z-index: 2000;
@@ -209,6 +219,7 @@
       66% { border-top-color: #dc3545; border-bottom-color: #17a2b8; }
       100% { border-top-color: #007bff; border-bottom-color: #00d4ff; }
     }
+
   </style>
 </head>
 
@@ -231,17 +242,18 @@
   </nav>
 
   <!-- Hero Section -->
-  <div class="hero-section">
+  <div class="hero-section text-center">
     <h1 class="display-4"><i class="fas fa-chart-line"></i> Investr</h1>
     <p class="lead">Get personalized investment recommendations tailored to your profile.</p>
-    <form id="investment-form" action="/recommend" method="POST" class="mt-4 mx-auto p-4 bg-light shadow-lg rounded" style="max-width: 600px;">
+    <form id="investment-form" action="/recommend" method="POST" class="mt-4">
       <div class="form-group">
-        <label for="profile">Enter Your Financial Profile:</label>
-        <textarea id="profile" name="profile" rows="4" class="form-control" required placeholder="Example: I earn $50,000 annually, have $20,000 saved, and my risk tolerance is moderate (5 out of 10)."></textarea>
+        <label for="profile" class="sr-only">Enter Your Financial Profile:</label>
+        <textarea id="profile" name="profile" rows="4" class="form-control rounded-0" required placeholder="Example: I earn $50,000 annually, have $20,000 saved, and my risk tolerance is moderate (5 out of 10)."></textarea>
       </div>
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Get Recommendation</button>
+      <button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill">Get Recommendation</button>
     </form>
   </div>
+
 
   <!-- Loading Spinner -->
   <div class="spinner-container" id="loading">
