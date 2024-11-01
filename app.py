@@ -29,11 +29,9 @@ def recommend():
     if not profile or len(profile.strip()) == 0:
         return render_template('index.html', error="Profile input cannot be empty.")
 
-    # Use the user input directly in the prompt
-    prompt = profile  # Use exactly what the user typed in the textarea
-
+    # Show the loading spinner while generating recommendations
     # Tokenize input and generate output
-    inputs = tokenizer(prompt, return_tensors="pt", padding=True, truncation=True)
+    inputs = tokenizer(profile, return_tensors="pt", padding=True, truncation=True)
 
     try:
         # Generate recommendations
@@ -60,7 +58,8 @@ def recommend():
     # Render the recommendation page with the structured recommendations
     return render_template(
         'recommendation.html',
-        recommendations=structured_recommendation
+        recommendations=structured_recommendation,
+        currency='USD'  # Add a currency variable if necessary
     )
 
 if __name__ == '__main__':

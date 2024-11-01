@@ -20,6 +20,10 @@
       margin-left: 10px;
     }
 
+    #loading {
+      display: none; /* Hide loading indicator by default */
+    }
+
     #recommendations {
       display: none; /* Hide recommendations by default */
     }
@@ -62,22 +66,22 @@
   </div>
 
   <script>
-    // Use window.onload to display recommendations and hide loading indicator
-    window.onload = function() {
-      // Hide loading indicator
-      document.getElementById('loading').style.display = 'none';
-      // Show recommendations
-      document.getElementById('recommendations').style.display = 'block';
-    };
+    // Show the loading spinner when the recommendations are being processed
+    function showLoading() {
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('recommendations').style.display = 'none';
+    }
 
-    // Simulate loading for demonstration purposes (remove in production)
+    // Hide the loading spinner and show recommendations
+    function hideLoadingAndShowRecommendations() {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('recommendations').style.display = 'block';
+    }
+
+    // This function simulates loading the recommendations
     document.addEventListener('DOMContentLoaded', function() {
-      // Simulate server processing time
-      setTimeout(function() {
-        // Assume recommendations are loaded; show recommendations section
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('recommendations').style.display = 'block';
-      }, 2000); // 2-second delay for demonstration
+      // Check if the recommendations are present and show them
+      hideLoadingAndShowRecommendations(); // This will show the recommendations once they're ready
     });
   </script>
 </body>

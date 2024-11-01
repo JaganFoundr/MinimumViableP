@@ -1,23 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Investr - Get personalized investment recommendations tailored to your profile.">
   <title>Investr</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="static/styles.css">
   <style>
-    .loading {
-      display: none;
+    /* Body and Overall Styles */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e9ecef, #d1f4f3);
+      font-family: Arial, sans-serif;
+      color: #343a40;
+      padding-top: 70px;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.8);
+      transition: background-color 0.3s ease, padding 0.3s ease;
+      z-index: 1000;
+    }
+
+    .navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 0.5rem;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-link {
+      color: #ffffff;
+      font-size: 1.1rem;
+      margin-right: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #00d4ff;
+    }
+
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* Hero Section */
+    .hero-section {
       text-align: center;
-      margin-top: 20px;
+      padding: 100px 0;
+    }
+
+    .hero-section h1 {
+      color: #007bff;
+      font-size: 2.5rem;
+      text-shadow: 1px 1px 4px rgba(0, 123, 255, 0.3);
+    }
+
+    .hero-section .lead {
+      color: #6c757d;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    /* Form Styles */
+    #investment-form {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      font-size: 1.1rem;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ced4da;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+    }
+
+    button.btn {
+      background: linear-gradient(135deg, #007bff, #00d4ff);
+      font-size: 1.2rem;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    button.btn:hover {
+      background: linear-gradient(135deg, #0056b3, #0084cc);
+      transform: scale(1.05);
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #about { background-color: #f0f8ff; }
+    #features { background-color: #f5f5f5; }
+    #testimonials { background-color: #e9f7ef; }
+    #contact { background-color: #fff5f8; }
+    #faq { background-color: #f9f9f9; }
+
+    h2 {
+      color: #007bff;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+
+    .footer a {
+      color: #007bff;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #0056b3;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 576px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-link {
+        margin-right: 15px;
+      }
+
+      button.btn {
+        font-size: 1rem;
+      }
+    }
+
+    /* Custom Loading Spinner Container */
+    .spinner-container {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+  
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .crazy-spinner {
+      width: 80px;
+      height: 80px;
+      border: 10px solid transparent;
+      border-top: 10px solid #007bff;
+      border-bottom: 10px solid #00d4ff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite, pulsate 2s ease-in-out infinite alternate, color-shift 3s linear infinite;
+    }
+
+    /* Spinner Animations */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulsate {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.2); }
+    }
+
+    @keyframes color-shift {
+      0% { border-top-color: #007bff; border-bottom-color: #00d4ff; }
+      33% { border-top-color: #28a745; border-bottom-color: #ffc107; }
+      66% { border-top-color: #dc3545; border-bottom-color: #17a2b8; }
+      100% { border-top-color: #007bff; border-bottom-color: #00d4ff; }
     }
   </style>
 </head>
 
 <body>
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#"><i class="fas fa-chart-line"></i> Investr</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,104 +230,68 @@
     </div>
   </nav>
 
-  <div class="container text-center mt-5">
+  <!-- Hero Section -->
+  <div class="hero-section">
     <h1 class="display-4"><i class="fas fa-chart-line"></i> Investr</h1>
     <p class="lead">Get personalized investment recommendations tailored to your profile.</p>
-
-    <form id="investment-form" action="/recommend" method="POST" class="p-4 shadow-lg rounded bg-light">
-        <div class="form-group">
-            <label for="profile">Enter Your Financial Profile:</label>
-            <textarea id="profile" name="profile" rows="6" class="form-control" required
-                placeholder="Example: I earn $50,000 annually, have $20,000 saved, and my risk tolerance is moderate (5 out of 10).">
-            </textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Get Recommendation</button>
+    <form id="investment-form" action="/recommend" method="POST" class="mt-4 mx-auto p-4 bg-light shadow-lg rounded" style="max-width: 600px;">
+      <div class="form-group">
+        <label for="profile">Enter Your Financial Profile:</label>
+        <textarea id="profile" name="profile" rows="4" class="form-control" required placeholder="Example: I earn $50,000 annually, have $20,000 saved, and my risk tolerance is moderate (5 out of 10)."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Get Recommendation</button>
     </form>
   </div>
 
-
   <!-- Loading Spinner -->
-  <div id="loading" class="loading">
-    <p>Loading your recommendations... Please wait.</p>
-    <i class="fas fa-spinner fa-spin" style="font-size: 3rem;"></i>
+  <div class="spinner-container" id="loading">
+    <div class="crazy-spinner"></div>
   </div>
 
   <!-- About Section -->
-  <div id="about" class="container mt-5">
-    <h2>About Us</h2>
-    <p>Investr is designed to help individuals make informed investment decisions based on their unique financial profiles. We offer personalized recommendations to help you achieve your financial goals.</p>
+  <div id="about" class="section">
+    <h2>About Investr</h2>
+    <p>Investr is an innovative tool designed to help you make informed investment decisions based on your unique financial profile.</p>
   </div>
 
   <!-- Features Section -->
-  <div id="features" class="container mt-5">
+  <div id="features" class="section">
     <h2>Features</h2>
-    <ul class="list-group">
-      <li class="list-group-item">Personalized investment recommendations</li>
-      <li class="list-group-item">User-friendly interface</li>
-      <li class="list-group-item">Real-time updates on market trends</li>
-      <li class="list-group-item">Secure and private data handling</li>
+    <ul class="list-unstyled">
+      <li><i class="fas fa-check"></i> Tailored recommendations based on your profile</li>
+      <li><i class="fas fa-check"></i> User-friendly interface</li>
+      <li><i class="fas fa-check"></i> Regular updates and insights</li>
+      <li><i class="fas fa-check"></i> Support for multiple asset classes</li>
     </ul>
   </div>
 
   <!-- Testimonials Section -->
-  <div id="testimonials" class="container mt-5">
+  <div id="testimonials" class="section">
     <h2>Testimonials</h2>
-    <blockquote class="blockquote">
-      <p class="mb-0">"Investr helped me find the perfect investment options!"</p>
-      <footer class="blockquote-footer">John Doe, <cite title="Source Title">Satisfied Customer</cite></footer>
-    </blockquote>
-    <blockquote class="blockquote">
-      <p class="mb-0">"A fantastic tool for anyone looking to invest wisely."</p>
-      <footer class="blockquote-footer">Jane Smith, <cite title="Source Title">Happy User</cite></footer>
-    </blockquote>
+    <p>"Investr helped me understand my investment options better!" - Happy Investor</p>
   </div>
 
   <!-- Contact Section -->
-  <div id="contact" class="container mt-5">
+  <div id="contact" class="section">
     <h2>Contact Us</h2>
-    <p>If you have any questions or feedback, feel free to reach out to us!</p>
     <p>Email: support@investr.com</p>
   </div>
 
   <!-- FAQ Section -->
-  <div id="faq" class="container mt-5">
-    <h2>Frequently Asked Questions</h2>
-    <div class="accordion" id="faqAccordion">
-      <div class="card">
-        <div class="card-header" id="faqHeading1">
-          <h5 class="mb-0">
-            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1">
-              What is Investr?
-            </button>
-          </h5>
-        </div>
-        <div id="faq1" class="collapse show" aria-labelledby="faqHeading1" data-parent="#faqAccordion">
-          <div class="card-body">
-            Investr is a platform that provides personalized investment recommendations based on your financial profile.
-          </div>
-        </div>
-      </div>
-      <div class="card mt-3">
-        <div class="card-header" id="faqHeading2">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faq2" aria-expanded="false" aria-controls="faq2">
-              How does Investr work?
-            </button>
-          </h5>
-        </div>
-        <div id="faq2" class="collapse" aria-labelledby="faqHeading2" data-parent="#faqAccordion">
-          <div class="card-body">
-            Users input their financial data, and our model analyzes this information to provide investment options tailored to their needs.
-          </div>
-        </div>
-      </div>
-    </div>
+  <div id="faq" class="section">
+    <h2>FAQ</h2>
+    <p>Have questions? Check out our FAQ section for common inquiries.</p>
   </div>
 
-  <div class="footer bg-dark text-white text-center p-4 mt-5">
-    <p>&copy; 2024 Investr. All rights reserved. | <a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms of Service</a></p>
-  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Investr. All rights reserved. | <a href="#">Privacy Policy</a></p>
+  </footer>
 
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
     window.onscroll = function () {
       var navbar = document.querySelector('.navbar');
@@ -142,23 +302,10 @@
       }
     };
 
-    // Add form submit event listener
-    document.getElementById('investment-form').onsubmit = function (event) {
-      event.preventDefault(); // Prevent the default form submission
-
-      // Show the loading spinner
-      document.getElementById('loading').style.display = 'block';
-      
-      // Submit the form after a short delay to simulate loading
-      setTimeout(function () {
-        this.submit(); // Use the `this` keyword to reference the form
-      }.bind(this), 1000); // 1-second delay for demo purposes
+    // Show loading spinner when submitting the form
+    document.getElementById('investment-form').onsubmit = function () {
+      document.getElementById('loading').style.display = 'flex'; // Show spinner
     };
   </script>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
 </html>
