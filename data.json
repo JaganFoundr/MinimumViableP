@@ -1,0 +1,547 @@
+[
+
+    {
+        "input": "I earn $200,000 annually, have $250,000 saved, want to maximize wealth accumulation, have a high risk tolerance of 9 out of 10, and plan to invest for 20 years.",
+        "output": "With a high risk tolerance and substantial savings, consider investing heavily in a mix of growth stocks, venture capital opportunities, and alternative investments like cryptocurrencies. Regularly review and adjust your portfolio based on market conditions."
+    },
+    {
+        "input": "I earn $65,000 annually, have $15,000 saved, wish to save for a child's education, have a moderate risk tolerance of 5 out of 10, and plan to invest for 15 years.",
+        "output": "For education savings, consider setting up a 529 plan for tax-free growth and contributions, complemented by a balanced mix of stock and bond index funds to achieve moderate growth while minimizing risk."
+    },
+    {
+        "input": "I earn $150,000 annually, have $40,000 saved, want to invest for a vacation home, have a moderate risk tolerance of 6 out of 10, and plan to invest for 5 years.",
+        "output": "To save for a vacation home in 5 years, consider a balanced approach with a mix of short-term bonds and conservative stock funds to achieve growth while safeguarding your principal investment."
+    },
+    {
+        "input": "I earn $25,000 annually, have $1,500 saved, need to build an emergency fund, have a low risk tolerance of 3 out of 10, and plan to invest for 2 years.",
+        "output": "Focusing on building an emergency fund, prioritize a high-yield savings account or short-term CDs to ensure your funds are accessible and safe while earning a small return."
+    },
+    {
+        "input": "I earn $95,000 annually, have $80,000 saved, want to transition into early retirement, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "For early retirement, create a diversified portfolio with a mix of growth stocks, dividend-paying stocks, and bonds. This balance can provide the growth needed while generating income through dividends."
+    },
+    {
+        "input": "I earn $110,000 annually, have saved $150,000, seek to invest in sustainable companies, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "To align with your values, consider investing in ESG (Environmental, Social, and Governance) funds or ETFs that focus on sustainable companies, balancing your portfolio with traditional investments to manage risk."
+    },
+    {
+        "input": "I earn $55,000 annually, have saved $10,000, want to grow wealth for retirement, have a moderate risk tolerance of 6 out of 10, and plan to invest for 20 years.",
+        "output": "For retirement growth, consider a mix of index funds that focus on both domestic and international equities, along with a portion in bond funds to reduce volatility as you approach retirement age."
+    },
+    {
+        "input": "I earn $80,000 annually, have saved $60,000, want to invest for tax efficiency, have a moderate risk tolerance of 5 out of 10, and plan to invest for 12 years.",
+        "output": "To achieve tax efficiency, consider using tax-advantaged accounts like a Roth IRA for your investments, along with focusing on index funds that typically generate lower capital gains."
+    },
+    {
+        "input": "I earn $120,000 annually, have $300,000 saved, am nearing retirement, have a low risk tolerance of 4 out of 10, and plan to invest for 5 years.",
+        "output": "For a conservative approach as you near retirement, consider allocating your savings into a mix of bonds and dividend-paying stocks to maintain stability while providing some income."
+    },
+    {
+        "input": "I earn $45,000 annually, have $5,000 saved, want to start investing, have a low risk tolerance of 3 out of 10, and plan to invest for 3 years.",
+        "output": "Start by building a solid emergency fund in a high-yield savings account, then consider conservative investments like bond funds or stable value funds to grow your savings safely."
+    },
+    {
+        "input": "I earn $90,000 annually, have $150,000 saved, want to save for a wedding, have a moderate risk tolerance of 5 out of 10, and plan to invest for 2 years.",
+        "output": "For a wedding planned in the near future, consider a short-term bond fund or a high-yield savings account to ensure your funds are safe and readily available when needed."
+    },
+    {
+        "input": "I earn $250,000 annually, have $500,000 saved, wish to diversify into international markets, have a high risk tolerance of 8 out of 10, and plan to invest for 15 years.",
+        "output": "Explore opportunities in emerging markets through international ETFs and mutual funds, focusing on growth sectors while maintaining a core of stable investments for balance."
+    },
+    {
+        "input": "I earn $30,000 annually, have $2,000 saved, need to pay off debt, have a low risk tolerance of 2 out of 10, and plan to invest for 1 year.",
+        "output": "Prioritize paying off high-interest debt first. Consider a personal loan with a lower interest rate to consolidate your debt while focusing on a savings account for short-term needs."
+    },
+    {
+        "input": "I earn $140,000 annually, have $200,000 saved, want to invest in real estate, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Consider investing in Real Estate Investment Trusts (REITs) for exposure to real estate markets without direct property management, while also keeping some cash reserves for opportunities."
+    },
+    {
+        "input": "I earn $75,000 annually, have $20,000 saved, wish to invest in retirement, have a moderate risk tolerance of 6 out of 10, and plan to invest for 25 years.",
+        "output": "Maximize contributions to a 401(k) and consider a diversified portfolio of index funds to leverage compounding growth over the long term, balancing stocks and bonds."
+    },
+    {
+        "input": "I earn $160,000 annually, have $400,000 saved, want to invest in startups, have a high risk tolerance of 9 out of 10, and plan to invest for 10 years.",
+        "output": "Consider joining an angel investing group or platform where you can assess and invest in early-stage startups, balancing your portfolio with some established assets for safety."
+    },
+    {
+        "input": "I earn $70,000 annually, have $25,000 saved, wish to travel extensively, have a moderate risk tolerance of 5 out of 10, and plan to invest for 5 years.",
+        "output": "For travel savings, consider a mix of conservative investments such as short-term bonds and high-yield savings accounts to ensure your money is secure and accessible."
+    },
+    {
+        "input": "I earn $50,000 annually, have $8,000 saved, want to save for a new car, have a moderate risk tolerance of 4 out of 10, and plan to invest for 3 years.",
+        "output": "For a short-term goal like a car purchase, consider a high-yield savings account to grow your savings safely and have your funds available when you're ready to buy."
+    },
+    {
+        "input": "I earn $110,000 annually, have $500,000 saved, wish to generate passive income, have a moderate risk tolerance of 5 out of 10, and plan to invest for 30 years.",
+        "output": "Look into dividend-paying stocks, real estate investments, and bond ladders to create a steady stream of income while allowing for long-term growth in your portfolio."
+    },
+    {
+        "input": "I earn $95,000 annually, have $100,000 saved, want to transition to self-employment, have a high risk tolerance of 7 out of 10, and plan to invest for 10 years.",
+        "output": "Consider investing in a mix of growth stocks and industry-related funds to bolster your business while keeping a cash reserve to manage cash flow during the transition."
+    },
+    {
+        "input": "I earn $80,000 annually, have $30,000 saved, want to invest for future health expenses, have a moderate risk tolerance of 5 out of 10, and plan to invest for 20 years.",
+        "output": "For long-term health expense savings, consider Health Savings Accounts (HSAs) paired with a diversified investment in stock and bond index funds to maximize tax advantages."
+    },
+    {
+        "input": "I earn $30,000 annually, have $4,000 saved, need to build a credit history, have a low risk tolerance of 2 out of 10, and plan to invest for 3 years.",
+        "output": "Start with a secured credit card to build your credit history while simultaneously saving in a high-yield savings account to improve your financial foundation."
+    },
+    {
+        "input": "I earn $120,000 annually, have $250,000 saved, want to save for a child's future, have a moderate risk tolerance of 5 out of 10, and plan to invest for 15 years.",
+        "output": "Consider establishing a 529 college savings plan for tax-advantaged growth, supplemented by a balanced portfolio of index funds and bonds to provide long-term growth."
+    },
+    {
+        "input": "I earn $200,000 annually, have $600,000 saved, wish to invest in a family business, have a high risk tolerance of 8 out of 10, and plan to invest for 10 years.",
+        "output": "Evaluate the business's financial health and market potential before investing, while diversifying your investment in various sectors to mitigate risk."
+    },
+    {
+        "input": "I earn $70,000 annually, have $20,000 saved, want to invest for a second home, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Consider a mix of conservative investments like bonds and stable dividend stocks to grow your savings for a down payment on a second home."
+    },
+    {
+        "input": "I earn $40,000 annually, have $10,000 saved, wish to invest in sustainable projects, have a moderate risk tolerance of 6 out of 10, and plan to invest for 15 years.",
+        "output": "Invest in ESG funds and green bonds that focus on sustainable development while ensuring a diversified portfolio to balance risks."
+    },
+    {
+        "input": "I earn $55,000 annually, have $12,000 saved, want to invest for career development, have a moderate risk tolerance of 5 out of 10, and plan to invest for 5 years.",
+        "output": "Consider allocating funds for professional training and certifications that can enhance your skills, combined with a diversified portfolio for long-term financial growth."
+    },
+    {
+        "input": "I earn $100,000 annually, have $150,000 saved, want to invest for a hobby business, have a high risk tolerance of 7 out of 10, and plan to invest for 10 years.",
+        "output": "Explore crowdfunding platforms for startups, while also maintaining some traditional investments to balance your risk profile as you grow your hobby business."
+    },
+    {
+        "input": "I earn $80,000 annually, have $15,000 saved, need to save for a family vacation, have a low risk tolerance of 3 out of 10, and plan to invest for 2 years.",
+        "output": "Focus on a high-yield savings account or a conservative short-term bond fund to ensure your vacation savings are safe and accessible when needed."
+    },
+    {
+        "input": "I earn $300,000 annually, have $1,000,000 saved, wish to optimize my tax strategy, have a high risk tolerance of 8 out of 10, and plan to invest for 20 years.",
+        "output": "Consult with a tax advisor to develop a tax-efficient investment strategy, potentially utilizing municipal bonds and tax-deferred accounts alongside growth-oriented investments."
+    },
+    {
+        "input": "I earn $50,000 annually, have $8,000 saved, want to build wealth over time, have a moderate risk tolerance of 5 out of 10, and plan to invest for 30 years.",
+        "output": "Consider a long-term investment strategy focused on diversified index funds that provide exposure to a broad market while reducing risk through time."
+    },
+    {
+        "input": "I earn $160,000 annually, have $300,000 saved, want to start a side business, have a moderate risk tolerance of 6 out of 10, and plan to invest for 5 years.",
+        "output": "Set aside a portion of your savings in a high-yield savings account for operational expenses while investing the rest in a diversified portfolio to support your side business."
+    },
+    {
+        "input": "I earn $90,000 annually, have $120,000 saved, want to invest in international stocks, have a high risk tolerance of 7 out of 10, and plan to invest for 10 years.",
+        "output": "Look into international mutual funds or ETFs that provide exposure to high-growth markets, balancing your portfolio with domestic stocks to manage risk."
+    },
+    {
+        "input": "I earn $55,000 annually, have $5,000 saved, wish to build a credit score, have a low risk tolerance of 3 out of 10, and plan to invest for 2 years.",
+        "output": "Open a secured credit card and pay off the balance monthly, while maintaining a small savings account for emergencies to ensure you have access to cash."
+    },
+    {
+        "input": "I earn $250,000 annually, have $800,000 saved, want to invest in real estate, have a high risk tolerance of 9 out of 10, and plan to invest for 15 years.",
+        "output": "Consider both direct property investments and REITs to balance risk while capturing growth in the real estate market, regularly reassessing your portfolio's performance."
+    },
+    {
+        "input": "I earn $40,000 annually, have $3,000 saved, need to create a budget, have a low risk tolerance of 2 out of 10, and plan to invest for 1 year.",
+        "output": "Start with a basic budgeting app to track your expenses and allocate savings into a high-yield savings account to build your financial cushion."
+    },
+    {
+        "input": "I earn $95,000 annually, have $70,000 saved, want to transition to freelance work, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Maintain a cash reserve for the initial months of freelancing, while investing in a diversified portfolio to grow your savings for future security."
+    },
+    {
+        "input": "I earn $70,000 annually, have $50,000 saved, wish to invest for travel, have a moderate risk tolerance of 5 out of 10, and plan to invest for 8 years.",
+        "output": "Consider a combination of a high-yield savings account for near-term travel expenses and a moderate investment in diversified funds for longer-term goals."
+    },
+    {
+        "input": "I earn $85,000 annually, have $20,000 saved, want to invest for retirement, have a moderate risk tolerance of 5 out of 10, and plan to invest for 25 years.",
+        "output": "Maximize contributions to an employer-sponsored retirement plan and invest in low-cost index funds for long-term growth, balancing equities and fixed income."
+    },
+    {
+        "input": "I earn $120,000 annually, have $100,000 saved, wish to invest in technology stocks, have a high risk tolerance of 8 out of 10, and plan to invest for 10 years.",
+        "output": "Focus on high-growth tech companies, while maintaining a diversified portfolio to cushion against market volatility and ensure stability."
+    },
+    {
+        "input": "I earn $75,000 annually, have $15,000 saved, want to invest in health insurance, have a low risk tolerance of 3 out of 10, and plan to invest for 5 years.",
+        "output": "Consider a health savings account (HSA) that offers tax advantages for medical expenses, while maintaining a conservative investment strategy for growth."
+    },
+    {
+        "input": "I earn $40,000 annually, have $5,000 saved, want to save for a new business, have a high risk tolerance of 7 out of 10, and plan to invest for 3 years.",
+        "output": "Explore funding options like microloans or peer-to-peer lending to build your business capital while keeping some savings for operational costs."
+    },
+    {
+        "input": "I earn $95,000 annually, have $80,000 saved, want to invest for early retirement, have a high risk tolerance of 9 out of 10, and plan to invest for 20 years.",
+        "output": "Focus on high-growth stocks and ETFs, balancing them with some fixed income to maintain a safety net as you transition into retirement."
+    },
+    {
+        "input": "I earn $30,000 annually, have $1,500 saved, need to establish a retirement plan, have a low risk tolerance of 2 out of 10, and plan to invest for 40 years.",
+        "output": "Begin with a simple savings account to grow your emergency fund, then gradually add to a retirement account with conservative investments as your income increases."
+    },
+    {
+        "input": "I earn $150,000 annually, have $500,000 saved, want to invest in index funds, have a moderate risk tolerance of 5 out of 10, and plan to invest for 20 years.",
+        "output": "Allocate a substantial portion of your savings into a diversified index fund portfolio that mirrors the overall market, while maintaining some cash reserves."
+    },
+    {
+        "input": "I earn $100,000 annually, have $20,000 saved, wish to invest in art and collectibles, have a high risk tolerance of 7 out of 10, and plan to invest for 15 years.",
+        "output": "Consider investing in high-value art pieces or collectibles that have the potential for appreciation, while diversifying with traditional investments."
+    },
+    {
+        "input": "I earn $65,000 annually, have $10,000 saved, want to invest in education, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Consider using a 529 plan for future education expenses, investing in a mix of conservative bonds and growth-oriented funds for balanced growth."
+    },
+    {
+        "input": "I earn $200,000 annually, have $700,000 saved, want to explore alternative investments, have a high risk tolerance of 9 out of 10, and plan to invest for 15 years.",
+        "output": "Consider private equity funds, real estate crowdfunding, or commodities like gold and silver to diversify your portfolio while maximizing returns."
+    },
+    {
+        "input": "I earn $75,000 annually, have $25,000 saved, wish to save for a new home, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Focus on a combination of high-yield savings accounts and conservative investments like bonds to ensure you have a secure down payment when needed."
+    },
+    {
+        "input": "I earn $85,000 annually, have $50,000 saved, want to invest in renewable energy, have a moderate risk tolerance of 6 out of 10, and plan to invest for 10 years.",
+        "output": "Consider mutual funds or ETFs that specialize in renewable energy, balancing them with traditional investments to maintain a well-rounded portfolio."
+    },
+    {
+        "input": "I earn $40,000 annually, have $6,000 saved, want to invest in health and wellness, have a low risk tolerance of 3 out of 10, and plan to invest for 5 years.",
+        "output": "Invest in a health savings account (HSA) for tax-free savings on medical expenses, while also considering low-risk investment options for growth."
+    },
+    {
+        "input": "I earn $200,000 annually, have $1,200,000 saved, wish to invest in luxury assets, have a high risk tolerance of 8 out of 10, and plan to invest for 20 years.",
+        "output": "Explore investments in luxury real estate, high-end collectibles, and fine art, while maintaining a diversified portfolio to manage overall risk."
+    },
+    {
+        "input": "I earn $90,000 annually, have $30,000 saved, wish to pay for graduate school, have a moderate risk tolerance of 5 out of 10, and plan to invest for 5 years.",
+        "output": "Consider a 529 plan or similar educational savings account, investing in a mix of conservative bonds and stocks to preserve capital while allowing for growth."
+    },
+    {
+        "input": "I earn $50,000 annually, have $10,000 saved, want to build an investment portfolio, have a moderate risk tolerance of 6 out of 10, and plan to invest for 10 years.",
+        "output": "Start by investing in diversified index funds and ETFs to capture market growth while maintaining some allocation in bonds for stability."
+    },
+    {
+        "input": "I earn $150,000 annually, have $300,000 saved, wish to invest in tech startups, have a high risk tolerance of 9 out of 10, and plan to invest for 15 years.",
+        "output": "Consider investing through platforms that focus on startup funding, ensuring a diversified approach to mitigate risks associated with individual investments."
+    },
+    {
+        "input": "I earn $75,000 annually, have $12,000 saved, want to create a financial safety net, have a low risk tolerance of 3 out of 10, and plan to invest for 5 years.",
+        "output": "Prioritize building an emergency fund in a high-yield savings account, while slowly introducing conservative investments to grow your savings."
+    },
+    {
+        "input": "I earn $200,000 annually, have $1,500,000 saved, want to leave a legacy, have a moderate risk tolerance of 5 out of 10, and plan to invest for 25 years.",
+        "output": "Consider a diversified portfolio of bonds, dividend stocks, and real estate to generate income and preserve capital for future generations."
+    },
+    {
+        "input": "I earn $30,000 annually, have $2,500 saved, wish to improve my financial literacy, have a low risk tolerance of 2 out of 10, and plan to invest for 3 years.",
+        "output": "Invest in educational resources, workshops, or courses focused on personal finance to enhance your knowledge, while maintaining a small savings account for emergencies."
+    },
+    {
+        "input": "I earn $130,000 annually, have $300,000 saved, want to invest in alternative health practices, have a moderate risk tolerance of 6 out of 10, and plan to invest for 10 years.",
+        "output": "Explore investments in health and wellness companies, coupled with a mix of traditional investments to create a balanced approach to your portfolio."
+    },
+    {
+        "input": "I earn $100,000 annually, have $60,000 saved, wish to invest in precious metals, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Consider allocating a portion of your portfolio to gold and silver ETFs, ensuring you maintain a diversified approach with equities and bonds."
+    },
+    {
+        "input": "I earn $250,000 annually, have $500,000 saved, want to transition to a minimalist lifestyle, have a low risk tolerance of 3 out of 10, and plan to invest for 20 years.",
+        "output": "Consider socially responsible investments that align with a minimalist philosophy while maintaining a diversified portfolio to ensure financial stability."
+    },
+    {
+        "input": "I earn $60,000 annually, have $10,000 saved, want to invest for a new business, have a high risk tolerance of 7 out of 10, and plan to invest for 5 years.",
+        "output": "Explore small business loans or crowdfunding opportunities to raise capital, while keeping some savings in a high-yield account for operational costs."
+    },
+    {
+        "input": "I earn $80,000 annually, have $40,000 saved, wish to invest in family health, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Invest in a health savings account (HSA) along with a diversified portfolio of low-cost index funds that provide stability and growth potential."
+    },
+    {
+        "input": "I earn $40,000 annually, have $7,000 saved, wish to travel long-term, have a moderate risk tolerance of 5 out of 10, and plan to invest for 5 years.",
+        "output": "Create a savings plan using a high-yield savings account and consider low-risk investments to ensure funds are available when traveling."
+    },
+    {
+        "input": "I earn $95,000 annually, have $80,000 saved, want to invest for a dream wedding, have a moderate risk tolerance of 5 out of 10, and plan to invest for 2 years.",
+        "output": "For a wedding in the near future, use a combination of short-term bonds and a high-yield savings account to keep your funds safe and accessible."
+    },
+    {
+        "input": "I earn $300,000 annually, have $2,000,000 saved, want to explore venture capital opportunities, have a high risk tolerance of 8 out of 10, and plan to invest for 15 years.",
+        "output": "Look into venture capital funds or syndicates that allow you to invest in promising startups, while maintaining a balanced portfolio to manage risk."
+    },
+    {
+        "input": "I earn $60,000 annually, have $10,000 saved, wish to create a financial plan, have a low risk tolerance of 3 out of 10, and plan to invest for 5 years.",
+        "output": "Work with a financial planner to create a comprehensive plan that includes budgeting, debt repayment, and safe investment strategies."
+    },
+    {
+        "input": "I earn $200,000 annually, have $1,000,000 saved, want to invest in high-growth sectors, have a high risk tolerance of 9 out of 10, and plan to invest for 20 years.",
+        "output": "Focus on sectors like technology and renewable energy, investing in ETFs and mutual funds that target these high-growth areas while diversifying your overall portfolio."
+    },
+    {
+        "input": "I earn $70,000 annually, have $25,000 saved, wish to save for a down payment on a home, have a moderate risk tolerance of 5 out of 10, and plan to invest for 5 years.",
+        "output": "Consider a mix of short-term bonds and high-yield savings accounts to ensure your down payment savings are secure and growing."
+    },
+    {
+        "input": "I earn $90,000 annually, have $50,000 saved, want to invest for retirement, have a moderate risk tolerance of 6 out of 10, and plan to invest for 25 years.",
+        "output": "Maximize your contributions to retirement accounts and invest in a diversified portfolio of low-cost index funds to grow your retirement savings."
+    },
+    {
+        "input": "I earn $300,000 annually, have $1,500,000 saved, want to create generational wealth, have a high risk tolerance of 8 out of 10, and plan to invest for 30 years.",
+        "output": "Invest in a combination of high-growth assets, including stocks, real estate, and alternative investments, to build a diverse portfolio for long-term wealth creation."
+    },
+    {
+        "input": "I earn $50,000 annually, have $10,000 saved, wish to save for a new car, have a low risk tolerance of 2 out of 10, and plan to invest for 3 years.",
+        "output": "Utilize a high-yield savings account to accumulate your car savings with minimal risk, ensuring your funds are secure for when you need them."
+    },
+    {
+        "input": "I earn $75,000 annually, have $20,000 saved, want to invest in stocks, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Begin by investing in diversified index funds to capture overall market performance while maintaining a portion of your portfolio in bonds for stability."
+    },
+    {
+        "input": "I earn $90,000 annually, have $30,000 saved, want to invest in fixed income, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Focus on a mix of government and corporate bonds that provide stable returns while also maintaining some equity investments to diversify your portfolio."
+    },
+    {
+        "input": "I earn $200,000 annually, have $2,000,000 saved, wish to invest in commodities, have a high risk tolerance of 7 out of 10, and plan to invest for 15 years.",
+        "output": "Consider a diversified commodity fund that includes gold, oil, and agricultural products to hedge against market volatility while seeking growth."
+    },
+    {
+        "input": "I earn $80,000 annually, have $25,000 saved, want to invest in personal development, have a moderate risk tolerance of 6 out of 10, and plan to invest for 10 years.",
+        "output": "Allocate funds for courses and training that enhance your skills, while also investing in a diversified portfolio for long-term financial growth."
+    },
+    {
+        "input": "I earn $200,000 annually, have $800,000 saved, want to invest in dividend stocks, have a moderate risk tolerance of 5 out of 10, and plan to invest for 15 years.",
+        "output": "Build a portfolio focused on high-quality dividend-paying stocks to generate income, ensuring diversification to mitigate risk."
+    },
+    {
+        "input": "I earn $150,000 annually, have $400,000 saved, want to invest in social enterprises, have a moderate risk tolerance of 6 out of 10, and plan to invest for 10 years.",
+        "output": "Invest in funds that support social enterprises and impact investing while maintaining a diversified portfolio for stable growth."
+    },
+    {
+        "input": "I earn $40,000 annually, have $7,000 saved, want to create a retirement fund, have a low risk tolerance of 2 out of 10, and plan to invest for 40 years.",
+        "output": "Start by saving in a low-risk retirement account and gradually increase your contributions as your income grows, focusing on stability over high returns."
+    },
+    {
+        "input": "I earn $200,000 annually, have $1,500,000 saved, wish to invest in private equity, have a high risk tolerance of 9 out of 10, and plan to invest for 20 years.",
+        "output": "Look into private equity funds that focus on emerging industries, ensuring a diversified investment strategy to manage overall risk."
+    },
+    {
+        "input": "I earn $100,000 annually, have $40,000 saved, wish to save for a wedding, have a low risk tolerance of 3 out of 10, and plan to invest for 2 years.",
+        "output": "Utilize a high-yield savings account and short-term bonds to ensure your wedding savings remain secure and accessible as the date approaches."
+    },
+    {
+        "input": "I earn $85,000 annually, have $30,000 saved, wish to invest in healthcare, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Invest in healthcare-focused ETFs or mutual funds while balancing your portfolio with traditional investments to mitigate risks."
+    },
+    {
+        "input": "I earn $40,000 annually, have $4,000 saved, want to build a small business, have a high risk tolerance of 7 out of 10, and plan to invest for 5 years.",
+        "output": "Explore crowdfunding or angel investing to gather funds for your small business, while maintaining a personal cash reserve for operational expenses."
+    },
+    {
+        "input": "I earn $300,000 annually, have $1,200,000 saved, wish to invest in health tech, have a high risk tolerance of 8 out of 10, and plan to invest for 15 years.",
+        "output": "Focus on health technology startups and mutual funds that target this sector while ensuring a balanced approach to your overall investment portfolio."
+    },
+    {
+        "input": "I earn $45,000 annually, have $5,000 saved, want to start a blog, have a low risk tolerance of 2 out of 10, and plan to invest for 3 years.",
+        "output": "Utilize a small portion of your savings for a website and marketing, while keeping the majority in a high-yield savings account for safety."
+    },
+    {
+        "input": "I earn $200,000 annually, have $1,000,000 saved, want to invest in philanthropy, have a moderate risk tolerance of 5 out of 10, and plan to invest for 20 years.",
+        "output": "Establish a donor-advised fund to manage your philanthropic contributions while maintaining a balanced investment strategy for long-term growth."
+    },
+    {
+        "input": "I earn $100,000 annually, have $50,000 saved, want to invest in startups, have a high risk tolerance of 9 out of 10, and plan to invest for 10 years.",
+        "output": "Consider joining angel investing groups or equity crowdfunding platforms to diversify your investments in startups while managing risk."
+    },
+    {
+        "input": "I earn $85,000 annually, have $20,000 saved, want to save for a new home, have a moderate risk tolerance of 6 out of 10, and plan to invest for 7 years.",
+        "output": "Focus on a combination of conservative investments like bonds and a high-yield savings account to secure your down payment funds."
+    },
+    {
+        "input": "I earn $150,000 annually, have $600,000 saved, want to invest in real estate, have a high risk tolerance of 8 out of 10, and plan to invest for 15 years.",
+        "output": "Consider direct real estate investments along with REITs to balance risk and return, while keeping some liquid funds for emergencies."
+    },
+    {
+        "input": "I earn $40,000 annually, have $3,000 saved, want to save for a vacation, have a low risk tolerance of 2 out of 10, and plan to invest for 1 year.",
+        "output": "Utilize a high-yield savings account to ensure your vacation savings are safe and accessible when needed."
+    },
+    {
+        "input": "I earn $60,000 annually, have $15,000 saved, want to invest in financial literacy, have a moderate risk tolerance of 5 out of 10, and plan to invest for 5 years.",
+        "output": "Invest in educational resources or courses that improve your financial knowledge while also considering a conservative investment strategy."
+    },
+    {
+        "input": "I earn $80,000 annually, have $10,000 saved, want to save for a new car, have a low risk tolerance of 2 out of 10, and plan to invest for 3 years.",
+        "output": "Focus on a high-yield savings account to keep your car savings secure and easily accessible as you approach your purchase timeline."
+    },
+    {
+        "input": "I earn $200,000 annually, have $800,000 saved, want to invest in fine art, have a high risk tolerance of 8 out of 10, and plan to invest for 20 years.",
+        "output": "Consider investing in pieces from emerging artists or established works with a proven history of appreciation while diversifying with traditional investments."
+    },
+    {
+        "input": "I earn $90,000 annually, have $20,000 saved, wish to invest for a family vacation, have a low risk tolerance of 3 out of 10, and plan to invest for 2 years.",
+        "output": "Utilize a high-yield savings account and conservative investments like short-term bonds to ensure your vacation savings are secure."
+    },
+    {
+        "input": "I earn $40,000 annually, have $4,000 saved, want to save for a new laptop, have a low risk tolerance of 3 out of 10, and plan to invest for 2 years.",
+        "output": "Focus on a high-yield savings account to keep your savings for a new laptop safe and readily available when needed."
+    },
+    {
+        "input": "I earn $150,000 annually, have $500,000 saved, want to invest in emerging markets, have a high risk tolerance of 8 out of 10, and plan to invest for 15 years.",
+        "output": "Explore mutual funds or ETFs that focus on emerging markets, ensuring a diversified investment strategy to mitigate risks associated with market volatility."
+    },
+    {
+        "input": "I earn $80,000 annually, have $30,000 saved, wish to invest in a new vehicle, have a moderate risk tolerance of 5 out of 10, and plan to invest for 3 years.",
+        "output": "Utilize a combination of a high-yield savings account and short-term bonds to keep your vehicle purchase savings secure and accessible."
+    },
+    {
+        "input": "I earn $100,000 annually, have $20,000 saved, want to invest in low-risk assets, have a low risk tolerance of 2 out of 10, and plan to invest for 5 years.",
+        "output": "Focus on savings bonds and CDs to preserve your capital while ensuring some liquidity as needed."
+    },
+    {
+        "input": "I earn $150,000 annually, have $400,000 saved, wish to invest in alternative energy, have a moderate risk tolerance of 6 out of 10, and plan to invest for 10 years.",
+        "output": "Consider investing in ETFs or mutual funds focused on alternative energy sectors while diversifying your portfolio with traditional investments."
+    },
+    {
+        "input": "I earn $75,000 annually, have $35,000 saved, want to start a business, have a high risk tolerance of 7 out of 10, and plan to invest for 5 years.",
+        "output": "Explore small business loans or equity crowdfunding platforms to gather initial capital, while keeping a cash reserve for operational costs."
+    },
+    {
+        "input": "I earn $100,000 annually, have $150,000 saved, want to save for children's education, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Consider a 529 college savings plan and invest in a balanced portfolio of stocks and bonds to grow your education fund."
+    },
+    {
+        "input": "I earn $60,000 annually, have $20,000 saved, wish to invest in personal finance courses, have a low risk tolerance of 3 out of 10, and plan to invest for 2 years.",
+        "output": "Allocate funds for high-quality personal finance courses while maintaining a secure savings account for emergencies."
+    },
+    {
+        "input": "I earn $200,000 annually, have $2,000,000 saved, want to invest in hedge funds, have a high risk tolerance of 8 out of 10, and plan to invest for 15 years.",
+        "output": "Research hedge fund opportunities that align with your investment goals, focusing on those with a strong track record while diversifying your overall portfolio."
+    },
+    {
+        "input": "I earn $75,000 annually, have $25,000 saved, wish to invest for a future home, have a moderate risk tolerance of 5 out of 10, and plan to invest for 7 years.",
+        "output": "Focus on low-cost index funds combined with a high-yield savings account to grow your down payment while minimizing risk."
+    },
+    {
+        "input": "I earn $80,000 annually, have $10,000 saved, want to invest in education, have a moderate risk tolerance of 5 out of 10, and plan to invest for 5 years.",
+        "output": "Consider a mix of high-yield savings accounts for short-term needs and conservative investment options like bonds for growth."
+    },
+    {
+        "input": "I earn $300,000 annually, have $1,500,000 saved, want to invest in family legacy, have a moderate risk tolerance of 5 out of 10, and plan to invest for 25 years.",
+        "output": "Establish a diversified investment strategy focused on income-generating assets to create a lasting family legacy."
+    },
+    {
+        "input": "I earn $200,000 annually, have $1,000,000 saved, wish to invest in sustainable farming, have a high risk tolerance of 8 out of 10, and plan to invest for 20 years.",
+        "output": "Consider investing in sustainable agriculture funds or direct investments in organic farms while diversifying your overall portfolio."
+    },
+    {
+        "input": "I earn $100,000 annually, have $70,000 saved, want to invest in real estate, have a high risk tolerance of 7 out of 10, and plan to invest for 10 years.",
+        "output": "Explore direct real estate investments or REITs while maintaining a balanced approach with traditional investments to mitigate risk."
+    },
+    {
+        "input": "I earn $150,000 annually, have $200,000 saved, wish to invest in technology, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Invest in a diversified portfolio of tech-focused ETFs and mutual funds while maintaining some conservative investments for stability."
+    },
+    {
+        "input": "I earn $200,000 annually, have $800,000 saved, want to invest in infrastructure projects, have a high risk tolerance of 8 out of 10, and plan to invest for 15 years.",
+        "output": "Explore infrastructure investment funds that focus on high-growth areas while ensuring a balanced portfolio to manage risk."
+    },
+    {
+        "input": "I earn $40,000 annually, have $3,000 saved, want to start a small business, have a moderate risk tolerance of 6 out of 10, and plan to invest for 5 years.",
+        "output": "Consider a mix of personal savings and small business loans to finance your venture, while maintaining a cash reserve for operational costs."
+    },
+    {
+        "input": "I earn $250,000 annually, have $1,000,000 saved, wish to invest in global markets, have a high risk tolerance of 9 out of 10, and plan to invest for 20 years.",
+        "output": "Focus on international ETFs or mutual funds that target emerging markets while diversifying your overall portfolio for risk management."
+    },
+    {
+        "input": "I earn $80,000 annually, have $20,000 saved, wish to save for an emergency fund, have a low risk tolerance of 2 out of 10, and plan to invest for 2 years.",
+        "output": "Prioritize a high-yield savings account to build your emergency fund, keeping your savings safe and easily accessible."
+    },
+    {
+        "input": "I earn $60,000 annually, have $10,000 saved, want to invest in retirement accounts, have a moderate risk tolerance of 5 out of 10, and plan to invest for 20 years.",
+        "output": "Maximize contributions to your retirement accounts, investing in a mix of index funds and bonds to ensure a balanced approach to growth."
+    },
+    {
+        "input": "I earn $120,000 annually, have $350,000 saved, wish to invest in a new business, have a high risk tolerance of 8 out of 10, and plan to invest for 10 years.",
+        "output": "Explore venture capital opportunities or equity crowdfunding to finance your business, while maintaining some savings for operational stability."
+    },
+    {
+        "input": "I earn $50,000 annually, have $5,000 saved, want to save for a vacation, have a low risk tolerance of 2 out of 10, and plan to invest for 2 years.",
+        "output": "Use a high-yield savings account to accumulate your vacation savings while keeping your funds safe and accessible."
+    },
+    {
+        "input": "I earn $300,000 annually, have $2,500,000 saved, want to invest in art and collectibles, have a moderate risk tolerance of 6 out of 10, and plan to invest for 20 years.",
+        "output": "Consider investing in art funds or collectible auctions, ensuring a balanced portfolio to mitigate risks associated with art investments."
+    },
+    {
+        "input": "I earn $70,000 annually, have $15,000 saved, wish to invest for a new car, have a moderate risk tolerance of 5 out of 10, and plan to invest for 3 years.",
+        "output": "Focus on a combination of high-yield savings accounts and low-risk investments to secure your funds for a car purchase."
+    },
+    {
+        "input": "I earn $40,000 annually, have $5,000 saved, want to save for a new phone, have a low risk tolerance of 2 out of 10, and plan to invest for 1 year.",
+        "output": "Utilize a high-yield savings account to ensure your savings for a new phone are secure and readily accessible."
+    },
+    {
+        "input": "I earn $200,000 annually, have $2,000,000 saved, want to invest in biotechnology, have a high risk tolerance of 9 out of 10, and plan to invest for 20 years.",
+        "output": "Explore biotech-focused ETFs or mutual funds that target innovative companies in the sector while diversifying your overall investment strategy."
+    },
+    {
+        "input": "I earn $90,000 annually, have $30,000 saved, wish to invest for retirement, have a moderate risk tolerance of 5 out of 10, and plan to invest for 25 years.",
+        "output": "Maximize contributions to your retirement accounts, focusing on a balanced portfolio of index funds and bonds to ensure growth."
+    },
+    {
+        "input": "I earn $100,000 annually, have $50,000 saved, want to invest in social impact, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "Consider funds that focus on social impact investing, ensuring you maintain a balanced portfolio with traditional investments."
+    },
+    {
+        "input": "I earn $50,000 annually, have saved $20,000, seek long-term growth, have a moderate risk tolerance of 5 out of 10, and plan to invest for at least 10 years.",
+        "output": "Based on your profile, consider investing in a diversified portfolio of index funds and ETFs. A mix of 70% equities and 30% bonds may align well with your long-term growth goals and moderate risk tolerance."
+    },
+    {
+        "input": "I earn $75,000 annually, have saved $50,000, want to preserve capital, have a low risk tolerance of 3 out of 10, and plan to invest for 5 years.",
+        "output": "Given your conservative approach, you might want to focus on fixed-income investments such as bonds or a high-yield savings account, ensuring that your capital remains safe while earning modest returns."
+    },
+    {
+        "input": "I earn $120,000 annually, have saved $100,000, seek aggressive growth, have a high risk tolerance of 8 out of 10, and plan to invest for 15 years.",
+        "output": "With your aggressive growth strategy, consider allocating a significant portion of your investments to high-growth tech stocks and emerging market funds, while regularly rebalancing your portfolio to capture potential gains."
+    },
+    {
+        "input": "I earn $40,000 annually, have $5,000 saved, want to start investing for retirement, have a low risk tolerance of 4 out of 10, and plan to invest for 30 years.",
+        "output": "To start building your retirement fund, consider a target-date retirement fund that gradually becomes more conservative over time, along with contributing to a Roth IRA for tax-free growth."
+    },
+    {
+        "input": "I earn $90,000 annually, have $30,000 saved, want to invest in real estate, have a moderate risk tolerance of 6 out of 10, and plan to invest for 10 years.",
+        "output": "Given your interest in real estate, look into Real Estate Investment Trusts (REITs) for exposure to property investments without the need to directly purchase real estate. Diversifying into a mix of REITs and stocks can also help manage risk."
+    },
+    {
+        "input": "I earn $30,000 annually, have $2,000 saved, want to invest for a major purchase in 3 years, have a low risk tolerance of 2 out of 10.",
+        "output": "To prepare for your major purchase in 3 years, consider keeping your savings in a high-yield savings account or short-term bonds, which offer more stability and less risk while still allowing for some interest accumulation."
+    },
+    {
+        "input": "I earn $200,000 annually, have $250,000 saved, want to maximize wealth accumulation, have a high risk tolerance of 9 out of 10, and plan to invest for 20 years.",
+        "output": "With a high risk tolerance and substantial savings, consider investing heavily in a mix of growth stocks, venture capital opportunities, and alternative investments like cryptocurrencies. Regularly review and adjust your portfolio based on market conditions."
+    },
+    {
+        "input": "I earn $65,000 annually, have $15,000 saved, wish to save for a child's education, have a moderate risk tolerance of 5 out of 10, and plan to invest for 15 years.",
+        "output": "For education savings, consider setting up a 529 plan for tax-free growth and contributions, complemented by a balanced mix of stock and bond index funds to achieve moderate growth while minimizing risk."
+    },
+    {
+        "input": "I earn $150,000 annually, have $40,000 saved, want to invest for a vacation home, have a moderate risk tolerance of 6 out of 10, and plan to invest for 5 years.",
+        "output": "To save for a vacation home in 5 years, consider a balanced approach with a mix of short-term bonds and conservative stock funds to achieve growth while safeguarding your principal investment."
+    },
+    {
+        "input": "I earn $25,000 annually, have $1,500 saved, need to build an emergency fund, have a low risk tolerance of 3 out of 10, and plan to invest for 2 years.",
+        "output": "Focusing on building an emergency fund, prioritize a high-yield savings account or short-term CDs to ensure your funds are accessible and safe while earning a small return."
+    },
+    {
+        "input": "I earn $95,000 annually, have $80,000 saved, want to transition into early retirement, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "For early retirement, create a diversified portfolio with a mix of growth stocks, dividend-paying stocks, and bonds. This balance can provide the growth needed while generating income through dividends."
+    },
+    {
+        "input": "I earn $110,000 annually, have saved $150,000, seek to invest in sustainable companies, have a moderate risk tolerance of 5 out of 10, and plan to invest for 10 years.",
+        "output": "To align with your values, consider investing in ESG (Environmental, Social, and Governance) funds or ETFs that focus on sustainable companies, balancing your portfolio with traditional investments to manage risk."
+    },
+    {
+        "input": "I earn $55,000 annually, have saved $10,000, want to grow wealth for retirement, have a moderate risk tolerance of 6 out of 10, and plan to invest for 20 years.",
+        "output": "For retirement growth, consider a mix of index funds that focus on both domestic and international equities, along with a portion in bond funds to reduce volatility as you approach retirement age."
+    },
+    {
+        "input": "I earn $80,000 annually, have saved $60,000, want to invest for tax efficiency, have a moderate risk tolerance of 5 out of 10, and plan to invest for 12 years.",
+        "output": "To achieve tax efficiency, consider using tax-advantaged accounts like a Roth IRA for your investments, along with focusing on index funds that typically generate lower capital gains."
+    }
+]

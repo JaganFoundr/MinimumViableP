@@ -10,6 +10,9 @@ COPY requirements.txt .
 # Install the Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Install additional required packages
+RUN pip install accelerate transformers[torch]  
+
 # Install the Hugging Face CLI for model downloads
 RUN pip install huggingface-hub
 
@@ -27,6 +30,9 @@ RUN huggingface-cli logout && unset HF_AUTH_TOKEN
 
 # Copy the entire project directory into the container
 COPY . .
+
+# Run the fine-tuning script
+RUN python fine_tuning.py  # This runs the fine-tuning process
 
 # Expose port 5000 for Flask
 EXPOSE 5000
