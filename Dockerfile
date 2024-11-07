@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Install additional required packages
-RUN pip install accelerate transformers[torch]  
+RUN pip install accelerate transformers[torch] 
 
 # Install the Hugging Face CLI for model downloads
 RUN pip install huggingface-hub
@@ -22,8 +22,9 @@ RUN huggingface-cli login --token $HF_AUTH_TOKEN
 
 # Download the model (this will happen during build, not at runtime)
 RUN python -c "from transformers import AutoModelForCausalLM, AutoTokenizer; \
-AutoTokenizer.from_pretrained('meta-llama/LLaMA-3.2-1B', token='$HF_AUTH_TOKEN'); \
-AutoModelForCausalLM.from_pretrained('meta-llama/LLaMA-3.2-1B', token='$HF_AUTH_TOKEN')"
+import os; \
+AutoTokenizer.from_pretrained('openai-community/gpt2', use_auth_token=os.getenv('HF_AUTH_TOKEN')); \
+AutoModelForCausalLM.from_pretrained('openai-community/gpt2', use_auth_token=os.getenv('HF_AUTH_TOKEN'))"
 
 # Clean up Hugging Face CLI authentication by logging out and unsetting the token
 RUN huggingface-cli logout && unset HF_AUTH_TOKEN

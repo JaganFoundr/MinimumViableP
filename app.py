@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Load pre-trained model and tokenizer
-model_name = "meta-llama/LLaMA-3.2-1B"  # Replace with your actual model
+model_name = "openai-community/gpt2"  # Replace with your actual model
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
